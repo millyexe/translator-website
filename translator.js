@@ -1,7 +1,6 @@
 const readline = require('readline');
 
-
-milly_dictionary = {
+const milly_dictionary = {
     'hello': '👋',
     'bye': '💪',
     'how': ':3',
@@ -905,65 +904,43 @@ milly_dictionary = {
 
 
 }
-
-
-let milly_reverse_dictionary = {};
-
-for(let key in milly_dictionary){
-  milly_reverse_dictionary[obj[key]] = key;
-}
-
-console.log(milly_reverse_dictionary)
-
-
-function translator(phrase)
-{
-  let translation = ''
+function translator(phrase) {
+  let translation = '';
   //tranlation = '' - ver Translation = string
-  let list_of_words = phrase.lower().split()
+  let list_of_words = phrase.toLowerCase().split(' ');
   //if the phrase was "hello how are you" the outcome would be ->
   //list_ofwords = [hello, how, are, you]
 
   //list_of_words = phrase.split() - spliting words from each other.
 
-  for (word in list_of_words){
-
-
+  for (word of list_of_words) {
       if (word in milly_dictionary) {
-    translation = translation + ' ' + milly_dictionary[word]
+          translation = translation + ' ' + milly_dictionary[word];
+      } else if (word in milly_reverse_dictionary) {
+          translation = translation + ' ' + milly_reverse_dictionary[word];
+      } else {
+          translation = translation + ' ' + word;
       }
-       
-      else if (word in milly_reverse_dictionary) {
-        translation = translation + ' ' + milly_reverse_dictionary[word]
-      }
-   
-      else {
-        translation = translation + ' ' + word
-      }
-return translation
-}
+  }
+  return translation;
 }
 
+/*still need to test this part on how to translate the value of a word instead of the original word*/
 
- /*still need to test this part on how to translate the value of a word instead of the original word*/
+//for key, value in list_of_words:
+//if the value is in milly dictionary
 
-  //for key, value in list_of_words:
-  //if the value is in milly dictionary
-    
-
-
-//console.log(translator(readline('Welcome to the Milly's translator! <3 Please, dear zolotzhe, enter your phrase: '))) 
-
-
-
-const rl = createInterface({
- input: process.stdin,
- output: process.stdout
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
 });
 
-rl.question('Welcome to the Milly translator! Please, dear zolotzhe, enter your phrase', (answer) => {
- // TODO: Log the answer in a database
- console.log(`Thank you for your valuable feedback: ${answer}`);
+rl.question(
+  'Welcome to the Milly translator! Please, dear zolotzhe, enter your phrase',
+  (phrase) => {
+      // TODO: Log the answer in a database
+      console.log(translator(phrase));
 
- rl.close;
-});
+      rl.close;
+  }
+);
