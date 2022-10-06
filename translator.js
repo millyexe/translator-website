@@ -961,22 +961,6 @@ function translator(phrase, reverse_phrase) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const express = require("express");
 // const bodyParsel = require("body-parser");
 

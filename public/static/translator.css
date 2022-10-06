@@ -1,0 +1,137 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+
+
+h1 {
+  background-color: pink;
+   border: solid 1px greenyellow; 
+   font-family: sans-serif;
+   font-size: 200px;
+
+   text-align: center;
+   color: black;
+   /* display: flex; */
+   align-items: center;  
+}
+
+h2{
+  border: solid red;
+  font-size: 30px;
+  
+}
+
+
+/* body {
+    height: 100vh;
+    display: flex;
+    align-items: center;  
+    background: linear-gradient(to top left, #F5A9E1, #F781D8);} */
+  
+  /* h1 {
+    font-family: sans-serif;
+    font-size: 50px;
+    /* line-height: 1.3;
+    width: 300px;
+    padding: 30px;
+    text-align: center;
+    color: black;
+    text-align: center;
+   color: black;
+   display: flex;
+  } */
+
+ 
+  /* .name {
+
+    color: black;
+    text-align: center;
+   color: black;
+   display: flex-grow;
+ 
+  } */
+
+
+.main {
+color: orange;
+font-size: 100px;
+border: solid 1px blue;
+background-color: pink;
+}
