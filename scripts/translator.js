@@ -3,6 +3,7 @@ import bodyParsel from "body-parser";
 import express from "express";
 import path from 'path';
 import serverless from "serverless-http";
+const router = express.Router();
 
 const __dirname = path.resolve(path.dirname(''))
 
@@ -959,27 +960,6 @@ function translator(phrase, reverse_phrase) {
 
 }
 
-function updateDatabase(data) {
-
-  return newValue;
-}
-
-exports.handler = function(event, context, callback) {
-  if(event.httpMethod === 'POST' && event.path === '/') {
-    const requestBody = JSON.parse(event.body);
-    const newValue = updateDatabase(requestBody);
-    callback(null, {
-      statusCode: 200,
-      body: newValue
-    });
-  } else {
-    callback(null, {
-      statusCode: 400,
-      body: {}
-    });
-  }
-}
-
 
 
 app.post("/", function(req, res){
@@ -997,6 +977,6 @@ console.log("Server is running on port 3000.");
 
 });
 
-
-
+app.use(/.netlify/functions/api, router);
+module.exports = app;
 module.exports.handler = serverless(app);
