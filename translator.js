@@ -952,20 +952,8 @@ function translator(phrase, reverse_phrase) {
 
 }
 
-/*still need to test this part on how to translate the value of a word instead of the original word*/
-
-//for key, value in list_of_words:
-//if the value is in milly dictionary
 
 
-
-
-
-// const express = require("express");
-// const bodyParsel = require("body-parser");
-
-// let app = express();
-// app.use(bodyParsel.urlencoded({extended: true}))
 
 
 app.post("/", function(req, res){
@@ -973,9 +961,9 @@ app.post("/", function(req, res){
    var milly_dictionary = (req.body.milly_dictionary);
    var milly_reverse_dictionary = (req.body.milly_reverse_dictionary);
    var result = translator(milly_dictionary, milly_reverse_dictionary);
-   console.log (result);
-res.send("In Milly language thats means: " + result.translation + "In english language thats means: " + result.translation1);
-
+//    console.log (result);
+// res.send("In Milly language thats means: " + result.translation + "In english language thats means: " + result.translation1);
+res.send('POST request to homepage')
 });
 
 app.listen(3000, function(){
