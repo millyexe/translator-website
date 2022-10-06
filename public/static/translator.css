@@ -85,7 +85,7 @@ h1 {
    border: solid 1px greenyellow; 
    font-family: sans-serif;
    font-size: 200px;
-
+margin: 10px;
    text-align: center;
    color: black;
    /* display: flex; */
@@ -95,9 +95,13 @@ h1 {
 h2{
   border: solid red;
   font-size: 30px;
-  
+
 }
 
+input{
+size: 10px;
+
+}
 
 /* body {
     height: 100vh;
