@@ -16,7 +16,7 @@ app.use(bodyParsel.urlencoded({extended: true}))
 const __dirname = path.resolve(path.dirname(''))
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "./index.html");
  });
  
 
@@ -974,8 +974,8 @@ res.send("In Milly language thats means: " + result.translation + "In english la
 
 });
 
-// app.listen(3000, function(){
-// console.log("Server is running on port 3000.");
+app.listen(process.env.PORT || 3000, function(){
+console.log("Server is running on port 3000.");
 
-// });
+});
 
