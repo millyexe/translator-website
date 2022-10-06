@@ -959,7 +959,26 @@ function translator(phrase, reverse_phrase) {
 
 }
 
+function updateDatabase(data) {
 
+  return newValue;
+}
+
+exports.handler = function(event, context, callback) {
+  if(event.httpMethod === 'POST' && event.path === '/') {
+    const requestBody = JSON.parse(event.body);
+    const newValue = updateDatabase(requestBody);
+    callback(null, {
+      statusCode: 200,
+      body: newValue
+    });
+  } else {
+    callback(null, {
+      statusCode: 400,
+      body: {}
+    });
+  }
+}
 
 
 
@@ -977,5 +996,7 @@ app.listen(3000, function(){
 console.log("Server is running on port 3000.");
 
 });
+
+
 
 module.exports.handler = serverless(app);
