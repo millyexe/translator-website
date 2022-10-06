@@ -2,20 +2,20 @@
 import bodyParsel from "body-parser";
 import express from "express";
 import path from 'path';
-import serverless from "serverless-http";
+
 
 
 
 
 const app = express();
-const router = express.Router();
+
 
 app.use(express.static("./"));
 
 app.use(bodyParsel.urlencoded({extended: true}))
 const __dirname = path.resolve(path.dirname(''))
 
-router.get("/", function(req, res){
+app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
  });
  
@@ -964,7 +964,7 @@ function translator(phrase, reverse_phrase) {
 
 
 
-router.post("/", function(req, res){
+app.post("/", function(req, res){
   console.log (req.body);
    var milly_dictionary = (req.body.milly_dictionary);
    var milly_reverse_dictionary = (req.body.milly_reverse_dictionary);
@@ -979,6 +979,3 @@ res.send("In Milly language thats means: " + result.translation + "In english la
 
 // });
 
-app.use('/.netlify/functions/translator', router);
-export default app;
-export const handler = serverless(app)
