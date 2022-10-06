@@ -2,6 +2,7 @@
 import bodyParsel from "body-parser";
 import express from "express";
 import path from 'path';
+import serverless from "serverless-http";
 
 const __dirname = path.resolve(path.dirname(''))
 
@@ -972,7 +973,9 @@ res.send("In Milly language thats means: " + result.translation + "In english la
 
 });
 
-// app.listen(3000, function(){
-// console.log("Server is running on port 3000.");
+app.listen(3000, function(){
+console.log("Server is running on port 3000.");
 
-// });
+});
+
+module.exports.handler = serverless(app);
