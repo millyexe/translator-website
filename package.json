@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "translator",
   "main": "translator.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "./node_modules/.bin/netlify-lambda serve scripts",
 "build": "./node_modules/.bin/netlify-lambda build scripts",
