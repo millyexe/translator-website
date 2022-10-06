@@ -1,7 +1,13 @@
 // const readline = require('readline');
-const bodyParsel = require("body-parser");
-const express = require("express");
+import bodyParsel from "body-parser";
+import express from "express";
+import path from 'path';
+
+const __dirname = path.resolve(path.dirname(''))
+
+
 const app = express();
+app.use(express.static("./"));
 app.use(bodyParsel.urlencoded({extended: true}))
 
 
@@ -932,7 +938,7 @@ function translator(phrase, reverse_phrase) {
 
   //list_of_words = phrase.split() - spliting words from each other.
 
-  for (word of list_of_words) {
+  for (let word of list_of_words) {
       if (word in milly_dictionary) {
           translation = translation + ' ' + milly_dictionary[word];
     
@@ -940,7 +946,7 @@ function translator(phrase, reverse_phrase) {
           translation = translation + ' ' + word;
       }
   }
-  for (word of reverse_list_of_words) {
+  for (let word of reverse_list_of_words) {
     if (word in milly_reverse_dictionary) {
       translation1 = translation1 + ' ' + milly_reverse_dictionary[word];}
     else {
@@ -961,9 +967,9 @@ app.post("/", function(req, res){
    var milly_dictionary = (req.body.milly_dictionary);
    var milly_reverse_dictionary = (req.body.milly_reverse_dictionary);
    var result = translator(milly_dictionary, milly_reverse_dictionary);
-//    console.log (result);
-// res.send("In Milly language thats means: " + result.translation + "In english language thats means: " + result.translation1);
-res.send('POST request to homepage')
+
+res.send("In Milly language thats means: " + result.translation + "In english language thats means: " + result.translation1);
+
 });
 
 app.listen(3000, function(){
