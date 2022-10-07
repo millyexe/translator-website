@@ -431,7 +431,7 @@ const milly_dictionary = {
     'choose': 'ϰ',
     'clock': 'ϖ',
     'collect': 'ϱ',
-    'colour': 'ಐ',
+    'color': 'ಐ',
     'common': '𝄽',
     'computer': '𝄞',
     'condition': '𝄟',
