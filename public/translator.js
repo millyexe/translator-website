@@ -10,7 +10,7 @@ import path from 'path';
 const app = express();
 
 
-app.use(express.static("./"));
+app.use(express.static("public"))
 
 app.use(bodyParsel.urlencoded({extended: true}))
 const __dirname = path.resolve(path.dirname(''))
