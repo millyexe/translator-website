@@ -1,1 +1,1 @@
-web: node translator.js
+web: node public/translator.js
