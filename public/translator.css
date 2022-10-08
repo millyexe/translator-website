@@ -93,6 +93,7 @@ margin: 10px;
 }
 html{
   height: 100%;
+  margin: 0%;
 }
 form{
   /* display: flex;
